@@ -246,7 +246,11 @@ Done
 
 ## What to do now?
 
-Now you can run the `runApp()` function. If you choose 100 patients, 2 clusters, "ward.D2" clustering and all variables
+Now you can run the `runApp()` function. 
+
+![](img/finalapp.jpg)
+
+If you choose 100 patients, 2 clusters, "ward.D2" clustering and all variables
 you will see pretty fast, that the patients:
 
 * 1002945
