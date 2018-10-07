@@ -1,15 +1,54 @@
+library(ape)
+library(magrittr)
+library(igraph)
+library(MASS)
 
+# -------- Derive the data ------------
+data(biopsy)
+# Names taken from: https://cran.r-project.org/web/packages/MASS/MASS.pdf
+names(biopsy)<-c(
+  "ID",
+  "clump thickness.",
+  "uniformity of cell size",
+  "uniformity of cell shape",
+  "marginal adhesion",
+  "single epithelial cell size",
+  "bare nuclei (16 values are missing)",
+  "bland chromatin",
+  "normal nucleoli",
+  "mitoses",
+  "disease status"
+)
 
-
-
-
-phyltree <- function(x= data.frame(), method="ward.D2", nc = 2, labels=c()){
+#' Function to paint a phylogenetic tree by hierarchical clustering
+#' 
+#' This function plots a phylogenetic tree of the input matrix.
+#' The tree groups are colored by calculated clusters. The label
+#' input can be used to color the nodes by true classes the inputs
+#' have.
+#' 
+#' @param x \code{data.frame} A data frame containing only numerics to
+#'          be clustered for the rows
+#' @param method \code{character} The name of clustering method for \link{hclust}
+#' 
+#' @param nc \code{numeric} The number of clusters to be evaluated (cutting of dendrogram)
+#' 
+#' @param labels \code{character} The names of the nodes inside the phylogenetic tree
+#' 
+#' @param color_func \code{character} The name of a function that takes the arguments
+#'                   n = number of items and alpha (0-1) that returns a character
+#'                   vector of HEX colors
+#' 
+#' @return An igraph plot
+#' 
+#' @author Sebastian Wolf \email{sebastian@@mail-wolf.de}
+phyltree <- function(x= data.frame(), method="ward.D2", nc = 2, labels=c(), color_func = "viridis"){
 	
 	# --------- perform clustering ----------------
 	clustered_patients <- list()
 	# Clustering via Hierarchical Clustering
 	clust <- hclust(dist(x), method = method)
-	clustered_patients$clust = clust # clustering cluster_resultput of hclust
+ 	clustered_patients$clust = clust # clustering cluster_resultput of hclust
 	clustered_patients$cluster_assigment = cutree(clust, k = nc) #cluster assignement
 	
 	# Plot data as phylogenetic tree
@@ -36,7 +75,7 @@ phyltree <- function(x= data.frame(), method="ward.D2", nc = 2, labels=c()){
 			names_vert = as.character(1:(tree_data$nr_patients + tree_data$nr_splits)),
 			col_vert = as.character(c(
 							# Colors for clusters
-							viridis(nc+1)[clustered_patients$cluster_assigment],
+							do.call(color_func,args=list(nc+1))[clustered_patients$cluster_assigment],
 							# black for phylogenetic splits
 							rep("black",tree_data$nr_splits))),
 			size_vert = c(
@@ -58,7 +97,7 @@ phyltree <- function(x= data.frame(), method="ward.D2", nc = 2, labels=c()){
 			color_known_status = c(
 					# Colors for status of disease known from
 					# biopsy data set
-					viridis(nc+1,0.5)[as.numeric(as.factor(labels))],
+			  do.call(color_func,args=list(nc+1,0.5))[as.numeric(as.factor(labels))],
 					# black for phylogenetic splits
 					rep("black",tree_data$nr_splits)
 			)
@@ -69,7 +108,7 @@ phyltree <- function(x= data.frame(), method="ward.D2", nc = 2, labels=c()){
 	igraph::plot.igraph(phylogenetic_graph,
 			laycluster_result=layout_nicely,
 			mark.groups = list_clust(dd$cluster_assignment),
-			mark.col = viridis(nc+1, 0.4),
+			mark.col = do.call(color_func,args=list(nc+1,0.4)),
 			mark.border = NA,
 			vertex.color= as.character(dd$color_known_status),
 			vertex.size =  dd[,3],
@@ -78,3 +117,8 @@ phyltree <- function(x= data.frame(), method="ward.D2", nc = 2, labels=c()){
 			vertex.label.dist = 0.5)
 }
 
+author_notes <- function(){
+	
+	readLines("www/author_notes.html")
+	
+}
