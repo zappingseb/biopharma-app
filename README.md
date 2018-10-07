@@ -1,5 +1,5 @@
 # Example of a visulization app for reasearch in biostatistics
-
+Learn to build a shiny app for the visualization of clusters by <a href="https://github.com/olaf-menzer">Olaf Menzer</a> and <a href="https://github.com/zappingseb">Sebastian Wolf</a>
 
 ## What is it about?
 
@@ -17,6 +17,8 @@ The example data used here is real data from a study from the 70s. The
 app that should be build inside this tutorial is preliminar and was especially
 build for the tutorial. Pieces of it were applied in biostatistical applications.
 
+The author runs a Medium blog that you can find at: <a target="new" href="https://medium.com/@zappingseb">Medium</a><br/>
+ 
 ## Starting point
 
 To start the tutorial in R please run:
