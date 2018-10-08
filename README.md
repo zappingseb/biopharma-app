@@ -264,7 +264,7 @@ you will see pretty fast, that the patients:
 * 1096800
 
 could be identified as the patients that were clustered wrong. Now you can go search for problems in clustering
-or look at the sheets of those patients. By changing the labeling inside the `phyltree` function call, you can even
+or look at the sheets of those patients. By changing the labeling e.g. using PatientIDs inside the `phyltree` function call, you can even
 check which other patients show close measurements to these patients. **Explore and play!**
 
 
