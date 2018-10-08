@@ -27,7 +27,7 @@ The author runs a Medium blog that you can find at: <a target="new" href="https:
 To start the tutorial in R please run:
 
 ```
-install.packages(c("ape","dplyr",magrittr","igraph","viridisLite","MASS","shiny"))
+install.packages(c("ape","dplyr","magrittr","igraph","viridisLite","MASS","shiny"))
 ```
 
 if you have all the packages installed you will have one file
