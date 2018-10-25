@@ -1,7 +1,7 @@
 
 library(shiny)
 library(viridisLite)
-lirbary(dplyr)
+library(dplyr)
 
 source("./R/utils.R")
 
