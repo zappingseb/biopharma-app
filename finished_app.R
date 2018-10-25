@@ -156,7 +156,7 @@ server <- function(input, output, session) {
               method = input$method,
               nc = input$nc,
               color_func = "viridis",
-              labels = biopsy %>% select("disease status") %>% 
+              labels = biopsy %>% dplyr::select("disease status") %>% 
                 filter(row_number() <= input$patients) %>% 
                 mutate_all(as.character)%>% 
                 pull("disease status")
@@ -181,7 +181,7 @@ server <- function(input, output, session) {
     # Create a table with the clusters, Patient IDs and Disease status
     out_table <- cbind(
       cluster_assigment,
-      biopsy %>% filter(row_number() <= length(cluster_assigment)) %>% select(c(1,11))
+      biopsy %>% filter(row_number() <= length(cluster_assigment)) %>% dplyr::select(c(1,11))
     )# cbind
     # Order by cluster_assigment
     out_table %>% arrange(cluster_assigment)
