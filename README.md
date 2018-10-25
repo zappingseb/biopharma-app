@@ -165,7 +165,7 @@ The hard part are now the labels. The `biopsy_numeric` data set is filtered by t
 Therefore we have to filter the labels, too. Therefore we use
 
 ```
-labels = biopsy %>% select("disease status") %>% 
+labels = biopsy %>% dplyr::select("disease status") %>% 
                 filter(row_number() <= input$patients) %>% 
                 mutate_all(as.character) %>% 
                 pull("disease status")
@@ -186,7 +186,7 @@ output$plot2 <- renderPlot({
               method = input$method,
               nc = input$nc,
               color_func = "viridis",
-              labels = biopsy %>% select("disease status") %>% 
+              labels = biopsy %>% dplyr::select("disease status") %>% 
                 filter(row_number() <= input$patients) %>% 
                 mutate_all(as.character)%>% 
                 pull("disease status")
