@@ -1,6 +1,8 @@
 # Example of a visulization app for a research lab in a biopharmaceutical company
 Learn to build a shiny app for the visualization of clusters by <a href="https://github.com/olaf-menzer">Olaf Menzer</a> and <a href="https://github.com/zappingseb">Sebastian Wolf</a>
 
+see the final app at: https://sebastianwolf.shinyapps.io/oleguacamole/#
+
 ![](img/finalapp.jpg)
 
 
