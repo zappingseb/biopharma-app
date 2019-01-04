@@ -11,7 +11,9 @@ source("./R/utils.R")
 
 # -------- Inputs for Clustering
 ui <- fluidPage(
-  
+  titlePanel("biopharma-app"),
+		
+		
   # Setup
   tags$link(rel = "stylesheet", type = "text/css", href = "style.css"),
   HTML(author_notes()),
