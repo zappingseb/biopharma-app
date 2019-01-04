@@ -1,0 +1,15 @@
+language: R
+env:
+  - PKG_TARBALL=RTest_1.2.3.1000.tar.gz
+sudo: required
+
+cache:
+ - packages
+ - apt: true
+pandoc_version: 1.19.2.1
+r_github_packages:
+  - rstudio/rsconnect
+- r: release
+  script:
+    - Rscript -e 'deployapp.R'
+  

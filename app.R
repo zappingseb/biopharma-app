@@ -1,6 +1,10 @@
-
 library(shiny)
 library(viridisLite)
+library(dplyr)
+library(ape)
+library(MASS)
+library(igraph)
+library(magrittr)
 
 source("./R/utils.R")
 

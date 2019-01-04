@@ -1,8 +1,3 @@
-library(ape)
-library(magrittr)
-library(igraph)
-library(MASS)
-
 # -------- Derive the data ------------
 data(biopsy)
 # Names taken from: https://cran.r-project.org/web/packages/MASS/MASS.pdf
