@@ -13,7 +13,7 @@ The story behind this app comes from a real application inside departments evalu
 
 Due to fast recruiting for clinical studies the patient cohorts seemed to be inhomogenic. Therefore a researcher and a clinical study statistician wanted to find out, by which parameter they can find patients, that do not seem to fit their desired class. Maybe there was a mistake in the labeling of a patient's disease status? Maybe one measurement or two measurements can be used to easily find such patients?
 
-The example data used here is real data from a study from the 90s, known as the biopsy data set. The app that should be build inside this tutorial is preliminary and was especially build for the tutorial. Pieces of it were applied in biostatistical applications.
+The example data used here is real data from a 1990's study, known as the biopsy data set, [also hosted on UCI ML data repository](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)). The app that should be build inside this tutorial is preliminary and was especially build for the tutorial. Pieces of it were applied in real world biostatistical applications.
  
 ## Starting point
 
@@ -52,12 +52,12 @@ It already contains a function to provide you with the
 input data sets `biopsy` and `biopsy_numeric()`, as `biopsy_numeric`
 is a [reactive](https://shiny.rstudio.com/tutorial/written-tutorial/lesson6/).
 
-In this tutorial we will go through step 1-4 to enable building the app
+In this tutorial we will go through steps 1-4 to enable building the app
 
 ## The input data set
 
 The patients inside the data set were obtained from the University of Wisconsin Hospitals, Madison
-from Dr. William H. Wolberg. He assessed biopsies of breast tumours for 699 patients up to 15 July
+from Dr. William H. Wolberg. [He assessed biopsies of breast tumours for 699 patients](http://rexa.info/paper/781d2581b297dad058cf6f1be2a009144b5306fb) up to 15 July
 1992; each of nine attributes has been scored on a scale of 1 to 10, and the outcome is also known.
 There are 699 rows and 11 columns.
 
@@ -112,7 +112,7 @@ my_hclust <- function(...){
     my_method <<- input$method
 ```
 
-Be aware that you define a global variable `my_method` here. But for the tutorial this shall work. You can find a lot on the internet why global variables are bad.
+Be aware that you define a global variable `my_method` here, which suffices within the scope of this tutorial. However, please keep in mind that global variables can be problematic in many other contexts and do your own research what best fits your application.
 
 Now for the heatmap call we basically need to change a few inputs. Please see the result:
 ```
@@ -147,7 +147,7 @@ Part 2 is done
 
 # 3) Plot a phylogenetic tree
 
-To allow plotting a phylogenetic tree we provided you a function called `phyltree`. You can read
+To allow plotting a phylogenetic tree we provided you with a function called `phyltree`. You can read
 the whole code of the function inside `R/utils.R`. This function takes as inputs 
 
 * a numeric matrix > `biopsy_numeric()` **CHECK**
