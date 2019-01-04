@@ -1,19 +1,19 @@
-# Tutorial: Building an app visualizing biopsy data in a bio-pharmaceutical company
-Learn to build a shiny app for the visualization of clusters. The app helps to better identify patient samples e.g. during a clinical study.
+# Tutorial: Building an app in R shiny to visualize biopsy data in a bio-pharmaceutical company
+Learn how to build a shiny app for the visualization of clustering results. The app helps to better identify patient data samples, e.g. during a clinical study.
 
-see the final app at: https://sebastianwolf.shinyapps.io/biopharma-app/#
+See the final app at: https://sebastianwolf.shinyapps.io/biopharma-app/#
 
 ![](img/finalapp.jpg)
 
-This tutorial is a joined approach. The Tutorial was presented by <a href="https://github.com/olaf-menzer">Olaf Menzer</a> in a workshop at the [ODSC conference 2018](https://odsc.com/training/portfolio/visual-elements-of-data-science). <a href="https://github.com/zappingseb">Sebastian Wolf</a> was co-implementing this application as an expert in bio-pharmaceutical web-applications.
+This tutorial is a joint work effort. The Tutorial was presented by <a href="https://github.com/olaf-menzer">Olaf Menzer</a> in a workshop at the [ODSC West Conference in San Francisco in 2018](https://odsc.com/training/portfolio/visual-elements-of-data-science). <a href="https://github.com/zappingseb">Sebastian Wolf</a> was co-implementing this application as an expert in bio-pharmaceutical web-applications.
 
 ## What is it about?
 
 The story behind this app comes from a real application inside departments evaluating clinical studies in diagnostics.
 
-Due to fast recruiting for clinical studies the patient cohorts seemed to be inhomogenic. Therefore a researcher and a clinical study statistician wanted to find out, by which parameter they can find patients, that do not seem to fit their desired class. Maybe there was a mistake in the labeling of a patient's disease status? Maybe one measurement or two measurements can be used to easily find such patients.
+Due to fast recruiting for clinical studies the patient cohorts seemed to be inhomogenic. Therefore a researcher and a clinical study statistician wanted to find out, by which parameter they can find patients, that do not seem to fit their desired class. Maybe there was a mistake in the labeling of a patient's disease status? Maybe one measurement or two measurements can be used to easily find such patients?
 
-The example data used here is real data from a study from the 70s, known as the biopsy data set. The app that should be build inside this tutorial is preliminary and was especially build for the tutorial. Pieces of it were applied in biostatistical applications.
+The example data used here is real data from a study from the 90s, known as the biopsy data set. The app that should be build inside this tutorial is preliminary and was especially build for the tutorial. Pieces of it were applied in biostatistical applications.
  
 ## Starting point
 
