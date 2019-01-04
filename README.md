@@ -1,32 +1,25 @@
-# Example of a visulization app for a research lab in a biopharmaceutical company
-Learn to build a shiny app for the visualization of clusters by <a href="https://github.com/olaf-menzer">Olaf Menzer</a> and <a href="https://github.com/zappingseb">Sebastian Wolf</a>
+# Tutorial: Building an app visualizing biopsy data in a bio-pharmaceutical company
+Learn to build a shiny app for the visualization of clusters. The app helps to better identify patient samples e.g. during a clinical study.
 
 see the final app at: https://sebastianwolf.shinyapps.io/biopharma-app/#
 
 ![](img/finalapp.jpg)
 
+This tutorial is a joined approach. The Tutorial was presented by <a href="https://github.com/olaf-menzer">Olaf Menzer</a> in a workshop at the [ODSC conference 2018](https://odsc.com/training/portfolio/visual-elements-of-data-science). <a href="https://github.com/zappingseb">Sebastian Wolf</a> was co-implementing this application as an expert in bio-pharmaceutical web-applications.
 
 ## What is it about?
 
-The story behind this app comes from a real application inside departments
-evaluating clinical studies in diagnostics.
+The story behind this app comes from a real application inside departments evaluating clinical studies in diagnostics.
 
-Due to fast recruiting for a clinical studies
-the patient cohorts seemed to be inhomogenic. Therefore a researcher and
-a clinical study statistician wanted to find out, by which parameter
-they can find patients, that do not seem to fit their desired class. Maybe
-there was a mistake in the labeling of a patients disease status? Maybe
-one measurement or two measurements can be used to easily find such patients.
+Due to fast recruiting for clinical studies the patient cohorts seemed to be inhomogenic. Therefore a researcher and a clinical study statistician wanted to find out, by which parameter they can find patients, that do not seem to fit their desired class. Maybe there was a mistake in the labeling of a patient's disease status? Maybe one measurement or two measurements can be used to easily find such patients.
 
-The example data used here is real data from a study from the 70s. The
-app that should be build inside this tutorial is preliminar and was especially
-build for the tutorial. Pieces of it were applied in biostatistical applications.
-
-The author runs a Medium blog that you can find at: <a target="new" href="https://medium.com/@zappingseb">Medium</a><br/>
+The example data used here is real data from a study from the 70s, known as the biopsy data set. The app that should be build inside this tutorial is preliminary and was especially build for the tutorial. Pieces of it were applied in biostatistical applications.
  
 ## Starting point
 
-To start the tutorial in R please run:
+Please start forking the tutorial at: https://github.com/zappingseb/biopharma-app
+
+and afterwards run the installation of dependencies in your R session:
 
 ```
 install.packages(c("ape","dplyr","magrittr","igraph","viridisLite","MASS","shiny"))
@@ -75,7 +68,8 @@ to not use all 699 patients, but between 1 and 100.
 ## 1) Construction of a `SelectInput`
 
 The `SelectInput` shall allow the user to not use all 9 measured variables, but just
-the ones he desires. We can therefore look at the description of the selectInput by
+the ones he desires. This shall help finding the measurement, that is necessary to 
+classify patients. What is a shiny selectInput? We can therefore look at the description of the selectInput by
 
 ```
 ?shiny::selectInput
