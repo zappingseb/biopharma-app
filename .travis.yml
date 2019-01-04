@@ -6,8 +6,15 @@ sudo: required
 cache:
  - packages
  - apt: true
-r_github_packages:
-  - rstudio/rsconnect
+r_packages:
+  - rsconnect
+  - ape
+  - dplyr
+  - magrittr
+  - igraph
+  - viridisLite
+  - MASS
+  - shiny
 r: release
 script:
   - Rscript -e 'deployapp.R'
